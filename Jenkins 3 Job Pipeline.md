@@ -19,7 +19,7 @@ After logging into the Jenkins server we are immediately taken to the dashboard 
 - “Discard old builds” enabled (keep last 5)  
 - Workspaces must be cleaned to avoid stale files  
 - Git Source Code Management always uses SSH URLs  
-- GitHub project URL uses HTTPS  
+- GitHub project URL uses HTTPS and must remove the .git from the end of this and replace with / 
 
 ![Job Similarities Part 1](jenkins-job-similarities1.png)
 
@@ -98,6 +98,24 @@ git merge origin/dev
 git push origin main
 ```
 git config lines not necessary but displays in GitHub with the name provided for who has accessed/made changes to repo.
+
+### Alternative method for Job 2
+
+Instead of using the execute shell and the above script for merging. Instead we can use the plugin Git Pubilsher.
+
+- In the CSM Section add additional behaviour "Merge Before Build"
+- name of repository is "origin"
+- branch to merge to is "dev" for your dev branch as previously we stated the branch we're building on was "main" 
+- leave merge strategy and fast-forward mode as is
+
+- In Post Build Steps
+- Choose Git Publisher
+- Tick Push Only if Build Succeeds
+- Branches:
+  - Branch to push "main"
+  - Target remote name "origin"
+
+Now this will merge the branches without the need for an execute shell.
 
 ### Steps After Build
 - Trigger Job 3
