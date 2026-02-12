@@ -4,7 +4,7 @@
 
 Job 1 triggers a code test of the last push sent to dev branch, if this is successful it will trigger Job 2 which will merge the dev branch into the main branch. Once this is completed Job 3 will access the main branch taking this new tested and merged code and apply it to an EC2 instance where we can see the changes made on the fronpage.
 
-The CI/CD pipeline is deigned in this way to create a clear, reliable flow from development to deployment, ensuring that every stage adds value without adding unnecessary complexity. Separating the pipeline into three focused jobs, testing, merging, and deployment, gives visibility, easier debugging, and predictable behaviour at each step. Throughout the build immediate benefits become clear: fewer manual tasks, consistent test results, clean merges, and deployments that became repeatable instead of fragile. For an organisation, this structure reduces human error, shortens delivery cycles, improves code quality, and creates a deployment process that can scale with team size and project complexity. In short, the pipeline enforces good engineering discipline while making releases faster, safer, and far more dependable.
+The CI/CD pipeline is designed in this way to create a clear, reliable flow from development to deployment, ensuring that every stage adds value without adding unnecessary complexity. Separating the pipeline into three focused jobs, testing, merging, and deployment, gives visibility, easier debugging, and predictable behaviour at each step. Throughout the build immediate benefits become clear: fewer manual tasks, consistent test results, clean merges, and deployments that became repeatable instead of fragile. For an organisation, this structure reduces human error, shortens delivery cycles, improves code quality, and creates a deployment process that can scale with team size and project complexity. In short, the pipeline enforces good engineering discipline while making releases faster, safer, and far more dependable.
 
 
 
@@ -81,7 +81,7 @@ Automatically merge tested code from `dev` into `main`.
 ### Key Configuration
 - SCM:  
   - SSH URL  
-  - Branch: `main`  
+  - Branch: `dev`  
 - Build Environment:  
   - **SSH Agent enabled** with GitHub key  
 - Triggered by:  
