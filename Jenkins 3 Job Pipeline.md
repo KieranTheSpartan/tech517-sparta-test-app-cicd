@@ -103,15 +103,11 @@ git config lines not necessary but displays in GitHub with the name provided for
 
 Instead of using the execute shell and the above script for merging. Instead we can use the plugin Git Pubilsher.
 
-- In the CSM Section:
-  -  Add additional behaviour "Merge Before Build"
-  - name of repository is "origin"
-  - branch to merge to is "dev" for your dev branch as previously we stated the branch we're building on was "main" 
-  - leave merge strategy and fast-forward mode as is
 
 - In Post Build Steps
   - Choose Git Publisher
   - Tick Push Only if Build Succeeds
+  - Tick Merge Results
   - Branches:
     - Branch to push "main"
     - Target remote name "origin"
