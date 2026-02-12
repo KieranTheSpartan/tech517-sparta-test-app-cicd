@@ -114,6 +114,8 @@ Instead of using the execute shell and the above script for merging. Instead we 
 
 Now this will merge the branches without the need for an execute shell.
 
+![Git Publisher in Jenkins for Job 2](git-pub.png)
+
 ### Steps After Build
 - Trigger Job 3
 
